@@ -10,6 +10,20 @@ const displayPhones = phones =>{
     // console.log(phones);
     phones.forEach(phone => {
         console.log(phone);
+        const phoneContainer = document.getElementById('phone-container');
+        const phoneCard = document.createElement('div');
+        phoneCard.classList = `card w-96 bg-gray-300 shadow-xl text-center p-4 mt-8`
+        phoneCard.innerHTML = `
+        <figure><img src="${phone.image}" alt="Shoes" /></figure>
+                    <div class="card-body">
+                      <h2 class="card-title flex justify-center text-center">${phone.phone_name}</h2>
+                      <p>${phone.slug}</p>
+                      <div class="card-actions justify-center">
+                        <button class="btn btn-primary text-center">show details</button>
+                      </div>
+                    </div>
+        `
+        phoneContainer.appendChild(phoneCard);
     });
 
 }
