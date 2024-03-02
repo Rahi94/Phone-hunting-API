@@ -15,13 +15,17 @@
     </header>
     <main>
         <section>
-            <div class="">
+            <div class="flex gap-1 items-center justify-center mx-auto mt-4">
                 <input id="input-field" type="text" placeholder="Search..." class="input input-bordered w-full bg-slate-200 max-w-sm mt-6" />
-                <button onclick="handleSearch()" class="btn btn-active btn-accent text-white">Search</button>
+                <button onclick="handleSearch()" class="btn mt-6 btn-active btn-accent text-white">Search</button>
             </div>
         </section>
         <!-- search result -->
         <section>
+            <!-- loading or spinner -->
+            <div id="loading-spinner" class="text-center mt-28 hidden">
+                <span class="loading text-primary loading-spinner loading-lg"></span>
+            </div>
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 
             </div>
