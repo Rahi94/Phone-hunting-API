@@ -37,7 +37,7 @@ const displayPhones = (phones, isShowAll) => {
                       <h2 class="card-title flex justify-center text-center">${phone.phone_name}</h2>
                       <p>${phone.slug}</p>
                       <div class="card-actions justify-center">
-                        <button class="btn btn-primary text-center">show details</button>
+                        <button onclick="handleShowDetails('${phone.slug}')" class="btn btn-primary text-center">show details</button>
                       </div>
                     </div>
         `
@@ -45,6 +45,10 @@ const displayPhones = (phones, isShowAll) => {
     });
     // hide loading spinner
     loadingSpinner(false);
+}
+
+const handleShowDetails = (id) =>{
+  console.log('clicked show all details', id)
 
 }
 
