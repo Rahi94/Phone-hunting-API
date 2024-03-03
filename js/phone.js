@@ -47,9 +47,21 @@ const displayPhones = (phones, isShowAll) => {
     loadingSpinner(false);
 }
 
-const handleShowDetails = (id) =>{
-  console.log('clicked show all details', id)
+const handleShowDetails = async (id) =>{
+// load single phone data
+   const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+   const data = await res.json();
+   const phone = data.data;
+   showPhoneDetails(phone);
+   
+}
 
+const showPhoneDetails = (phone) =>{
+  console.log(phone);
+  const showDetailPhoneName = document.getElementById('show-detail-phone-name');
+  showDetailPhoneName.innerText = phone.name;
+  // show the modal
+  show_details_modal.showModal()
 }
 
 const handleSearch = (isShowAll) => {
